@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Flask app to generate complete html page containing location/amenity
 dropdown menus and rental listings"""
+
 from flask import Flask, render_template
 from models import storage
 import uuid
@@ -22,7 +23,7 @@ def display_hbnb():
 
 @app.teardown_appcontext
 def teardown_db(*args, **kwargs):
-    """Close database or file storage"""
+    """Close database or file storages"""
     storage.close()
 
 

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Flask app to generate complete html page containing location/amenity
 dropdown menus and rental listings"""
+
 from flask import Flask, render_template
 from models import storage
 import uuid
@@ -10,7 +11,7 @@ app.url_map.strict_slashes = False
 
 @app.route('/3-hbnb')
 def display_hbnb():
-    """Generate page with popdown menu of states/cities"""
+    """Generate page with popdown menu of states or cities"""
     states = storage.all('State')
     amenities = storage.all('Amenity')
     places = storage.all('Place')
